@@ -1,0 +1,65 @@
+<%@include  file="../header/bussines_header.jsp" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+   <style>
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1 align="center">NEW OFFERS </h1>
+        <form name="form1" method="post" action="/location_based_shop_tracking/p_offer_act">
+          <p>&nbsp;</p>
+          <table width="200" border="0" align="center" cellpadding="0">
+            <tr>
+              <td>PRODUCT</td>
+              <td><label>
+                <select name="product.prdtId" required="">
+                    <c:forEach items="${users}" var="us">
+                    <option value=${us.prdtId}>${us.prodName}</option>
+                    </c:forEach>
+                </select>
+              </label></td>
+            </tr>
+            <tr>
+              <td>OFFER </td>
+              <td><label>
+              <textarea name="ofrDetails" required=""></textarea>
+              </label></td>
+            </tr>
+            <tr>
+              <td>DATE</td>
+              <td><label>
+              <input type="date" name="date" required="">
+              </label></td>
+            </tr>
+            <tr>
+              <td colspan="2"><div align="center">
+                <label>
+                <input type="submit" name="Submit" value="Submit">
+                </label>
+              </div></td>
+            </tr>
+          </table>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+        </form>
+        <p align="center">&nbsp;</p>
+    </body>
+</html>
+ <%@include  file="../header/footer.jsp" %>   
